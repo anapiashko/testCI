@@ -14,10 +14,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module> department-management-dao </module>
-        <module>department-management-model</module>
-        <module>department-management-test</module>
-        <module>department-management-web-app</module>
     </modules>
 
     <properties>
