@@ -1,4 +1,4 @@
-package com.testCI.functional_interface;
+package functional_interface;
 
 import java.util.Scanner;
 import java.util.function.*;
