@@ -36,6 +36,7 @@ public class TestCIApplication {
         String metadataColumns = "CustomerCategories ,ProductCategories, Resolution,Summary,UrlName,VisiblePublicKB,LastModifiedDate,PublishStatus";
         String[] metadata = metadataColumns.split(" *, *");
         System.out.println(Arrays.toString(metadata));
+        System.out.println(Arrays.toString(metadata));
 
 //        AuthorRepo authorRepo = new AuthorRepoImpl();
 //        BookRepo bookRepo = new BookRepoImpl();
