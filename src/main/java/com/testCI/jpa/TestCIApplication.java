@@ -31,6 +31,7 @@ public class TestCIApplication {
         List<String> mandatoryFields = Arrays.asList("Id", "Title", "Details__c");
         List<String> optionalFields = headers.stream().filter(header -> !mandatoryFields.contains(header)).collect(Collectors.toList());
         System.out.println(optionalFields);
+        System.out.println(optionalFields);
 
         String metadataColumns = "CustomerCategories ,ProductCategories, Resolution,Summary,UrlName,VisiblePublicKB,LastModifiedDate,PublishStatus";
         String[] metadata = metadataColumns.split(" *, *");
