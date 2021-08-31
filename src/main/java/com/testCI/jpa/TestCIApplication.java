@@ -32,5 +32,10 @@ public class TestCIApplication {
 
        publisherRepo.create(publisher);
         System.out.println(publisherRepo.findAllBooks());
+
+        publisherRepo.create(publisher);
+        System.out.println(publisherRepo.findAllBooks());
+        publisherRepo.create(publisher);
+        System.out.println(publisherRepo.findAllBooks());
     }
 }
