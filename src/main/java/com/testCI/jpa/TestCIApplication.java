@@ -23,14 +23,18 @@ public class TestCIApplication {
 
         List<Book> books = bookRepo.findAll();
 
-        Author author = new Author("Gabriel", "Scany",books);
+        Author author = new Author("Gabriel", books);
 
-       authorRepo.create(author);
-     //  System.out.println(authorRepo.findAll());
+        authorRepo.create(author);
 
-       Publisher publisher = new Publisher("publisher", books);
+        List<Book> books2 = bookRepo.findAll();
 
-       publisherRepo.create(publisher);
+        List<Author> authors = books2.get(0).getAuthors();
+
+        Publisher publisher = new Publisher("publisher2", books2);
+
+        publisherRepo.create(publisher);
+
         System.out.println(publisherRepo.findAllBooks());
 
         publisherRepo.create(publisher);

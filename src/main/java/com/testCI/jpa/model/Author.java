@@ -1,31 +1,48 @@
 package com.testCI.jpa.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Author {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "author_id")
     private Integer id;
 
-    private String firstName;
-
-    private String lastName;
+    private String name;
 
     @ManyToMany
+    @JoinTable(name = "author_book"
+    )
     private List<Book> books;
 
     public Author() {
     }
 
-    public Author(String firstName, String lastName, List<Book> books) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Author(String name, List<Book> books) {
+        this.name = name;
         this.books = books;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Author author = (Author) o;
+        return Objects.equals(id, author.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return 0;
     }
 }
